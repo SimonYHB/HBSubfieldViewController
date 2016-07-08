@@ -143,13 +143,7 @@ static NSString * const reuseIdentifier = @"Cell";
 #warning 更改处
             if ([v isKindOfClass:objc_getClass("UINavigationButton")] ||[v isKindOfClass:objc_getClass("UIButton")]) {
                 channalWidth -= v.frame.size.width;
-                
-                //                if (barButtonView==nil) {
-                //                    if (v.frame.origin.x > 0.0)
-                //                        barButtonView = v;
-                //                } else if (v.frame.origin.x < barButtonView.frame.origin.x && v.frame.origin.x>0.0) {
-                //                    barButtonView = v;  // this view is further right
-                //                }
+
             }
         }
         UIScrollView *channalView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, channalWidth - 50, 44)];
@@ -162,8 +156,8 @@ static NSString * const reuseIdentifier = @"Cell";
             
             UIImageView* naviBarImageView = [self.navigationController.navigationBar.subviews firstObject];
             naviBarImageView.backgroundColor = backgroudColor;
-        }
-        
+        } 
+
         self.navigationItem.titleView = channalView;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:self.layout];
         collectionView.delegate = self;
